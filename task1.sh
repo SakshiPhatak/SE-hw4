@@ -1,1 +1,2 @@
-pgrep infinite.sh | xargs kill
+pgrep infinite.sh \
+| xargs kill
