@@ -6,10 +6,13 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: run the scripts
-      run: |
-        chmod +x dataset1/task2a.sh
-        chmod +x dataset1/task2b.sh
-        chmod +x dataset1/task2c.sh
-        ./task2.sh
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: run the scripts
+        run: |
+          chmod +x dataset1/task2a.sh
+          chmod +x dataset1/task2b.sh
+          chmod +x dataset1/task2c.sh
+          ./task2.sh
