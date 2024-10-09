@@ -1,17 +1,16 @@
 name: Run Script for Task1
 
-on: [push,pull_request]
+on: [push, pull_request]
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: checkout code
         uses: actions/checkout@v4
 
       - name: Run the script
-        run:  |
+        run: |
           chmod +x task1.sh
-          ./task1.sh
-        continue-on-error: true
+          ./infinite.sh && ./task1.sh
