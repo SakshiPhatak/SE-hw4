@@ -11,13 +11,7 @@ jobs:
         os: [ubuntu-latest]
         python-version: ["3.11", "3.12", "3.13"]
 
-  steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.x"
-  
+  steps:s
     - name: make script executable
       run: |
         chmod +x dataset1/task2a.sh
