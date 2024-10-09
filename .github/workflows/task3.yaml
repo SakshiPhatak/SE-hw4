@@ -3,19 +3,11 @@ name: Task3
 on: [push,pull_request]
 
 jobs:
-  tests:
+  run-script:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest]
-        python-version: ["3.11", "3.12", "3.13"]
 
   steps:
-    - name: make script executable
+    - name: run the script
       run: |
         chmod +x task3.sh
-
-    - name: run task3.sh
-      run: |
         ./task3.sh

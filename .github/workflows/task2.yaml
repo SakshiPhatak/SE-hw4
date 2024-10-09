@@ -3,21 +3,13 @@ name: Task2
 on: [push,pull_request]
 
 jobs:
-  tests:
+  run-script:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest]
-        python-version: ["3.11", "3.12", "3.13"]
 
-  steps:s
-    - name: make script executable
+  steps:
+    - name: run the scripts
       run: |
         chmod +x dataset1/task2a.sh
         chmod +x dataset1/task2b.sh
         chmod +x dataset1/task2c.sh
-
-    - name: run task2.sh
-      run: |
         ./task2.sh
