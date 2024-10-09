@@ -13,4 +13,5 @@ jobs:
       - name: Run the script
         run: |
           chmod +x task1.sh
+          chmod +x infinite.sh
           ./infinite.sh && ./task1.sh
