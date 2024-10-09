@@ -1,0 +1,26 @@
+name: Task1
+
+on: [push,pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.11", "3.12", "3.13"]
+
+  steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.x"
+  
+    - name: make script executable
+      run: |
+        chmod +x task1.sh
+    - name: run task1.sh
+      run: |
+        ./task1.sh

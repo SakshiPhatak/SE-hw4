@@ -1,0 +1,29 @@
+name: Task2
+
+on: [push,pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.11", "3.12", "3.13"]
+
+  steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.x"
+  
+    - name: make script executable
+      run: |
+        chmod +x dataset1/task2a.sh
+        chmod +x dataset1/task2b.sh
+        chmod +x dataset1/task2c.sh
+
+    - name: run task2.sh
+      run: |
+        ./task2.sh
