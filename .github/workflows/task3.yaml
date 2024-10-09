@@ -1,4 +1,4 @@
-name: Task3
+name: Run Script for Task3
 
 on: [push,pull_request]
 
