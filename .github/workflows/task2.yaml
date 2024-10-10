@@ -10,9 +10,7 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
 
-      - name: run the scripts
+      - name: run the script
         run: |
-          chmod +x dataset1/task2a.sh
-          chmod +x dataset1/task2b.sh
-          chmod +x dataset1/task2c.sh
+          chmod +x task2.sh
           ./task2.sh
